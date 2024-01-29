@@ -67,7 +67,8 @@ $g3 = 5;
 development environment setup and include 
 it as an image in the "ex1.php" file.</h3>
 
-<img src="image/24php.png" alt="docker image" >
+<img src="
+image/24php.png" alt="docker image" >
 
 </body>
 </html>
