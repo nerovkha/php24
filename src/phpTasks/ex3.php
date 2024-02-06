@@ -1,91 +1,97 @@
-<?php
-$title = "Ex3";
+<?php 
+$title = "Exercise 3: Variables, Strings & Operators";
 include 'header.php';
+?>
 
-    ?>
+<h1>Form Creation: Create a simple HTML form to collect 
+    the user’s Firstname and Lastname. Use the echo statement
+     to print “Hello [Firstname] [Lastname], You are welcome to my site.” inside an 'h3' tag </h1>
 
-    <form method="post" action="process_form.php">
-        <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="firstname" required>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Contact Us</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>>
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="John Doe" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="john@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+               
+                <div class="mb-3">
+                    <label for="dob">Choose your Date of Birth</label>
+                    <input type="date" name="dob" id="dob" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-        <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname" required>
 
-        <button type="submit">Submit</button>
-    </form>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
-
-
-    <?php
-// Declare two string variables
+<?php
 $str1 = "Hello";
 $str2 = "World";
 
-// Join the strings together
-$joinedString = $str1 . " " . $str2;
-
-// Print the joined string
-echo "Joined String: $joinedString<br>";
-
-// Print the length of the string
+$joinedString = $str1 . $str2;
 $length = strlen($joinedString);
-echo "Length of the String: $length";
+
+echo "Joined str: " . $joinedString . "<br>";
+echo "Length of Joined Str: " . $length;
 ?>
 
-
-
 <?php
-// Declare variables for the numbers
 $num1 = 298;
 $num2 = 234;
 $num3 = 46;
-
-// Add up the numbers
-$sum = $num1 + $num2 + $num3;
-
-// Output the result
-echo "The sum of $num1, $num2, and $num3 is: $sum";
+echo  "<br>" ."Number addition equals to: "  . ($num1 + $num2 + $num3)  ;
 ?>
-<?php
-// Get the user agent string from $_SERVER variable
-$userAgent = $_SERVER['HTTP_USER_AGENT'];
 
-// Check for common browsers
-if (strpos($userAgent, 'MSIE') !== false || strpos($userAgent, 'Trident') !== false) {
-    $browser = 'Internet Explorer';
-} elseif (strpos($userAgent, 'Firefox') !== false) {
-    $browser = 'Mozilla Firefox';
-} elseif (strpos($userAgent, 'Chrome') !== false) {
-    $browser = 'Google Chrome';
-} elseif (strpos($userAgent, 'Safari') !== false) {
-    $browser = 'Apple Safari';
-} elseif (strpos($userAgent, 'Opera') !== false || strpos($userAgent, 'OPR') !== false) {
-    $browser = 'Opera';
-} else {
-    $browser = 'Unknown';
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+    
+    echo "<br>" ."Hello, $name Your eamil id is:  $email ";
+
 }
 
-// Output the result
-echo "You are using: $browser";
 ?>
 
-
-<?php
-// Get the current script's filename
-$currentScript = $_SERVER['PHP_SELF'];
-
-// Extract the filename using basename
-$filename = basename($currentScript);
-
-// Get the last modified time of the file
-$lastModifiedTime = filemtime($filename);
-
-// Format the last modified time using date
-$lastModifiedFormatted = date("F j, Y, g:i a", $lastModifiedTime);
-
-// Output the last modified time in the footer
-echo "<p>Last modified: $lastModifiedFormatted</p>";
-?>
-
-
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>
