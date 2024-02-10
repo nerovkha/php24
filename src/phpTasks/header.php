@@ -48,7 +48,7 @@
           
           <li>
 
-            <a class="nav-link active" href="ex3.php">ex5</a>
+            <a class="nav-link active" href="#">ex5</a>
             
           </a>
           
@@ -57,7 +57,7 @@
           
           <li>
 
-            <a class="nav-link active" href="ex3.php">ex6</a>
+            <a class="nav-link active" href="#">ex6</a>
             
           </a>
           
@@ -66,7 +66,7 @@
           
           <li>
 
-            <a class="nav-link active" href="ex3.php">ex7</a>
+            <a class="nav-link active" href="index.php">ex7</a>
             
           </a>
           
