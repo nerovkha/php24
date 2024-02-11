@@ -48,31 +48,41 @@
           
           <li>
 
-            <a class="nav-link active" href="#">ex5</a>
+          <a class="nav-link active" href="#">ex5</a>
             
           </a>
           
-        </li>
+        </li>     
+
+
+        
           
           
           <li>
 
-            <a class="nav-link active" href="#">ex6</a>
+            <a class="nav-link active" href="#">ex7</a>
+            
+          </a>
+            <a class="nav-link active" href="index.php">create</a>
             
           </a>
           
-        </li>
+            <a class="nav-link active" href="read.php">read</a>
+            
+          </a>
           
-          
-          <li>
+        <a class="nav-link active" href="update_info.php">update</a>
 
-            <a class="nav-link active" href="index.php">ex7</a>
-            
-          </a>
+         
+          
+          
           
         </li>
+         
           
-    
+         
+
+       
         
         </ul>
         
@@ -81,3 +91,5 @@
       </div>
     </div>
   </nav>
+ 
+  
